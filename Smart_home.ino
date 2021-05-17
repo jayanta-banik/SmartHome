@@ -3,8 +3,8 @@
 #include <DHT.h>
 #define DHTTYPE DHT11
 
-const char* ssid = "Ultron's Intranet";
-const char* password = "lol.java";
+const char* ssid = "";
+const char* password = "";
 DHT dht(D5, DHTTYPE);
 byte periodicity = 0;
 String req = "";
@@ -38,7 +38,7 @@ void loop() {
   }
   delay(100);
   periodicity++;
-  if (periodicity % 20 == 0) {
+  if (periodicity % 40 == 0) {
     //    get data
     float h = dht.readHumidity();
     float t = dht.readTemperature();
